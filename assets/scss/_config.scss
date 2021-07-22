@@ -1,0 +1,24 @@
+@import url("https://use.typekit.net/jya0fox.css");
+
+$serif: corporate-a, serif;
+$sansSerif: franklin-gothic-urw, sans-serif;
+
+
+$small: 40em;
+$medium: 60em;
+$large: 80em;
+
+$breakpoints: (
+	small: $small,
+	medium: $medium,
+	large: $large,
+);
+
+$burgundy: #a96682;
+$blue-xlight: #d9e6ec;
+$brown: #2f241f;
+$brown-light: #5e3d2d;
+$brown-light: #775454;
+$brown-xlight: #c28774;
+$orange: #f46e42;
+$yellow: #ff0;

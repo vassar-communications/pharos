@@ -1,0 +1,8 @@
+.nav-links {
+	.prevnext__title {
+		@include font(sansSerif, bold regular smallcaps);		
+	}
+	.prevnext__name {
+		@include font(sansSerif, bold size-medium xcondensed);
+	}
+}

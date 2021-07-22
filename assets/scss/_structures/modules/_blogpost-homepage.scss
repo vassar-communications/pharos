@@ -1,0 +1,26 @@
+.blog {
+	.post {
+		margin-bottom: 2em;
+		padding-bottom: 2em;
+
+		@include break(medium) {
+			display: grid;
+			grid-gap: 3em;
+			grid-template-columns: 2fr 3fr;
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				"post-title post-content"
+				"post-meta post-content";
+				
+			.entry__content {
+				grid-area: post-content;
+			}
+			.post__header {
+				grid-area: post-title;
+			}
+			.post__meta {
+				grid-area: post-meta;
+			}
+		}
+	}
+}

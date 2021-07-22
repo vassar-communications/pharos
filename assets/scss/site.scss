@@ -1,0 +1,16 @@
+@import "_config";
+@import "~beltpack";
+@import "_tools/_all";
+@import "_basics/_all";
+@import "_type/_all";
+@import "_structures/_all";
+@import "_themes/_all";
+
+
+#wpadminbar {
+	opacity: 0;
+	
+	&:hover {
+		opacity: 1;
+	}
+}

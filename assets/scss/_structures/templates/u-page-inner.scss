@@ -1,0 +1,126 @@
+html {
+	padding: 2em 8vw;
+}
+.u-lHeader,
+.u-NavSite {
+    margin-bottom: 2em;
+    padding-bottom: 2.3em;
+}
+
+.site-title {
+	margin-bottom: 0;
+}
+
+.menu-toggle,
+.menu-close {
+	display: none;
+}
+
+.menu-main-navigation-container {
+	li {
+		margin-right: -0.3em !important;
+	}
+	a {
+		display: inline-block;
+		padding: 0.4em 0.6em;
+	}
+}
+
+html {
+	.PageContentInner {
+		display: grid;
+		grid-template-areas: "masthead" "nav-top" "content" "footer";
+
+		& > * {
+			//	https://stackoverflow.com/questions/43311943/prevent-content-from-expanding-grid-items
+			//	Without this, the grid items would be pushing out of the container, so there wouldn't be any padding on the right side.
+		    min-width: 0;
+		}
+	}
+	@include break(medium) {
+		&.has-subnav {
+			.PageContentInner {
+				grid-template-columns: 3fr 3fr;
+				grid-template-rows: auto auto auto;
+				grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
+			}
+		}
+		&.no-subnav {
+			.PageContentInner {
+				grid-template-columns: 3fr 3fr;
+				grid-template-rows: auto auto auto;
+				grid-template-areas: "masthead nav-top" "content content" "footer footer";
+			}
+		}
+		&.has-sidebar:not(.blog) {
+			.u-lMain {
+				grid-template-columns: 7fr 3fr;
+				grid-gap: 6em;
+			}
+		}
+	}
+	.u-lHeader {
+		align-items: center;
+		display: flex;
+		grid-area: masthead;
+		justify-content: center;
+
+		justify-content: left;
+		padding: 0;
+	}
+	.u-NavSite__main {
+		grid-area: nav-top;
+		line-height: 1.4;
+	}
+	.u-NavSite__level--1 {
+		@include break(medium) {
+			float: right;
+			width: 70%;
+		}
+	}
+	.menu-main-navigation-container {
+		.menu {
+			margin: 0;
+			padding-left: 0;
+			text-align: center;
+
+			@include break(medium) {
+				text-align: right;
+			}
+		}
+		& > ul {
+			& > li {
+				display: inline-block;
+				list-style: none;
+			}
+		}
+	}
+	.u-NavSite__secondary {
+		grid-area: nav-secondary;
+		
+		.u-NavSite__level--2 {
+			margin: 5em 4em 0 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			
+			a {
+				text-decoration: none;
+				padding-left: 1.4em;
+			}
+		}
+	}
+	.u-lMain {
+		grid-area: content;
+
+		@include break(medium) {
+			display: grid;
+		}
+	}
+	.u-lFooter {
+		grid-area: footer;
+	}	
+}

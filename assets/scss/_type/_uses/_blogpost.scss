@@ -1,0 +1,11 @@
+.post-edit-link {
+	@include font(sansSerif, xxsmall);
+}
+.post__categories {
+	a {
+		@include font(sansSerif, xxsmall);
+	}
+}
+.more-link {
+	@include font(sansSerif, small heavy);
+}

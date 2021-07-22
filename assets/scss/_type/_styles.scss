@@ -1,0 +1,137 @@
+html {
+	font-size: 1.3em;
+
+	//	This is based on https://www.madebymike.com.au/writing/fluid-type-calc-examples/
+	//	I've found this to get the best results: doesn't expand too quickly.
+	//	It does feel more complex and fudge-factor-y than a clamp()-based solution, but it
+	//	gets the job done.
+
+	@media screen and (min-width: $medium) {
+	    font-size: 1.4em;
+	    font-size: calc(1em + 0.34 * ((100vw - 20em) / 60));
+	}
+}
+
+$typography: (
+	sansSerif: (
+		all: (
+			font-family: #{$sansSerif},
+//			line-height: 1.4,
+		),
+		xxsmall: (
+			font-size: (0.9em, 0.8em, 0.7em),
+			font-weight: 400,
+		),
+		xsmall: (
+			font-size: (0.8em, 0.9em, 0.8em),
+			font-weight: 400,
+		),
+		small: (
+			font-size: 0.9em
+		),
+		regular: (
+			font-size: (1em, 1em, 1em),
+			line-height: 1.36,
+			font-weight: 400,
+//			letter-spacing: -0.012em,
+		),
+		bold: (
+			font-weight: 600			
+		),
+		heavy: (
+			font-weight: 800
+		),
+		xsmall heavy: (
+			font-weight: 700			
+		),
+		small heavy: (
+			font-weight: 700			
+		),
+		heavy regular smallcaps: (
+			font-weight: 700
+		),
+		weight-light: (
+			font-weight: 300,			
+		),
+		size-medium: (
+			font-size: 1.4em,
+			letter-spacing: -0.02em,
+		),
+		size-medium condensed: (
+			line-height: 1.2,
+			letter-spacing: -0.01em,
+		),
+		large: (
+			font-size: 2em,
+			letter-spacing: -0.02em,
+		),
+		heavy large condensed: (
+			line-height: 0.94,
+		),
+		xlarge: (
+			font-size: 2.7em,
+			line-height: 1,
+			letter-spacing: -0.025em,
+
+//			font: '800 2.8em/1.05 #{$sansSerif}',
+		),
+		xxlarge: (
+			font-size: 4em,
+		),
+		xxlarge condensed: (
+			line-height: 1,
+		),
+		relative-xx-smaller: (
+			font-size: 60%,
+		),
+		//	modifiers - smallcaps, condensed - should be placed after everything else, since it needs
+		//	to be 110% of whatever it's applied to (it's too small otherwise)
+		//	if it comes before other rules, that font-size gets replaced by
+		//	any font-size specified in the other rules.
+		smallcaps: (
+			font-variant: small-caps,
+			text-transform: lowercase,
+			letter-spacing: 0.04em,
+			font-size: 110%,
+		),
+		condensed: (
+			line-height: 1.3,
+		),
+		xcondensed: (
+			line-height: 1.1,
+		),
+	),
+	serif: (
+		all: (
+			font-family: #{$serif},
+		),
+		wght-normal: (
+			font-weight: normal,
+		),
+		small: (
+			font-size: 0.9em
+		),
+		size-regular: (
+			font-size: (1em, 1em),
+		),
+		size-medium: (
+			font-size: (1.4em, 1.4em),
+		),
+		xlarge: (
+			font-size: (1.2em, 1.6em),
+		),
+		condensed: (
+			line-height: (1, 1.2)
+		),
+		small condensed:
+		(
+			font-size: 0.8em,
+			line-height: 1.4,
+		),
+		small-caps: (
+			font-variant: small-caps,
+			text-transform: lowercase,
+			font-size: 120%
+		)
+	)
+);

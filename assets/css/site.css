@@ -1,0 +1,1277 @@
+@import url("https://use.typekit.net/jya0fox.css");
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*	UTILITIES
+	=========
+
+	These provide useful functions for writing your own mixins, as well as mixins for automating certain processes (generating responsive CSS from a map, for example). They're also used by mixins in Beltpack itself, so they should come first.
+*/
+/*
+	As far as I can tell, there doesn't seem to be a function to get a key-value pair from a map based on index number. This might be clumsy, but it works: iterate across the map, incrementing a counter, until the counter matches the specified index, at which point you return the value.
+
+*/
+/*	FUNCTIONS
+	========= */
+/*	The following are by Hugo Giraudel
+*/
+/*	MIXINS
+	====== */
+/*	AESTHETIC
+	=========
+
+	These mixins handle aesthetic effects.
+*/
+/*	Animations
+	========== */
+/*	Utilities
+	---------
+	Couple of tools for applying animations.
+
+*/
+/*	Columns
+	======= */
+/*
+	STRUCTURE
+	=========	
+
+	This contains mixins that might be useful for layout stuff.	
+*/
+/*
+
+	NOTE
+	Compiling this file will throw an error, even though compiling files
+	that refer to it will not throw errors.
+
+	Still looking into this, but it's fine.	
+
+	THIS SHOULD BE BUILT ON TOP OF BELTPACK. This includes a break() mixin without
+	the second parameter, and that's blocking the more advanced break() mixin in Beltpack.
+	Go through this and remove everything that's already in Beltpack.
+
+*/
+/* ---- */
+/*	Debug
+	=====
+
+	This is a collection of tools and mixins that will help with development. I'm keeping it separate from the main mixins file because this is stuff that shouldn't get mixed up in the final site. Ensuring that this doesn't go live should be as simple as commenting out the debug @import.
+*/
+/*	Basics is for pervasive rules that should apply everywhere. These are more fundamental and generic than helpers - they apply to all layouts. This could be a single page, but I'm setting it up as a folder in case anyone would want to include stuff like reset/normalize stylesheets.
+
+	Couple of ideas here from https://every-layout.dev/
+*/
+html {
+  font-size: 1.2em;
+  scroll-behavior: smooth;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 40em) {
+  html {
+    font-size: calc(1em + 0.5 * ((100vw - 20em) / 60));
+  }
+}
+@media screen and (min-width: 60em) {
+  html {
+    font-size: calc(0.8em + 0.5 * ((100vw - 20em) / 60));
+  }
+}
+
+b {
+  font-weight: unset;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin-top: 0;
+}
+
+*:only-child,
+*:first-child {
+  margin-top: 0;
+}
+
+img,
+table {
+  width: 100%;
+}
+
+img {
+  display: block;
+  line-height: 0;
+}
+
+img[alt="css.php"] {
+  display: none;
+}
+
+/*	Fonts
+	=====
+
+	Store all references to locally hosted webfonts here.
+
+	Note that fonts declared in an @import - like Typekit stuff - are in _config, since @import statements need to be the first item in the generated CSS.
+*/
+html {
+  font-size: 1.3em;
+}
+@media screen and (min-width: 60em) {
+  html {
+    font-size: 1.4em;
+    font-size: calc(1em + 0.34 * ((100vw - 20em) / 60));
+  }
+}
+
+h1 {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-weight: 800;
+  font-size: 2.7em;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+h2 {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  letter-spacing: -0.02em;
+  line-height: 0.94;
+}
+h3 {
+  font-family: corporate-a, serif;
+  font-weight: normal;
+  font-size: 1.4em;
+}
+@media screen and (min-width: 40em) {
+  h3 {
+    font-size: 1.4em;
+  }
+}
+h4 {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 1em;
+  line-height: 1.3;
+  font-weight: 800;
+}
+@media screen and (min-width: 40em) {
+  h4 {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 60em) {
+  h4 {
+    font-size: 1em;
+  }
+}
+
+p {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 1em;
+  line-height: 1.36;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  p {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 60em) {
+  p {
+    font-size: 1em;
+  }
+}
+
+figcaption {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  figcaption {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 60em) {
+  figcaption {
+    font-size: 0.8em;
+  }
+}
+
+li {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 1em;
+  line-height: 1.3;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  li {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 60em) {
+  li {
+    font-size: 1em;
+  }
+}
+li::marker {
+  font-weight: bold;
+}
+
+pre {
+  font-family: corporate-a, serif;
+  font-size: 1.4em;
+  line-height: 1;
+}
+@media screen and (min-width: 40em) {
+  pre {
+    font-size: 1.4em;
+    line-height: 1.2;
+  }
+}
+p em, li em {
+  font-family: corporate-a, serif;
+}
+
+.has-intro-font-size {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.post-edit-link {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  .post-edit-link {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 60em) {
+  .post-edit-link {
+    font-size: 0.7em;
+  }
+}
+
+.post__categories a {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  .post__categories a {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 60em) {
+  .post__categories a {
+    font-size: 0.7em;
+  }
+}
+
+.more-link {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.9em;
+  font-weight: 700;
+}
+.home .u-pageTitle {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-weight: 800;
+  font-size: 1.4em;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.site-title {
+  font-family: corporate-a, serif;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 100;
+}
+
+.site-description {
+  font-family: corporate-a, serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 100;
+}
+
+.home .site-title {
+  font-size: 3.2em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .home .site-title {
+    font-size: 4.2em;
+  }
+}
+
+.menu .menu-item {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+@media screen and (min-width: 40em) {
+  .menu .menu-item {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 60em) {
+  .menu .menu-item {
+    font-size: 0.8em;
+  }
+}
+
+.nav-links .prevnext__title {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 110%;
+  line-height: 1.36;
+  font-weight: 600;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.nav-links .prevnext__name {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-weight: 600;
+  font-size: 1.4em;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.widget-title {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 110%;
+  line-height: 1.36;
+  font-weight: 700;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.widget li {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1.3;
+}
+@media screen and (min-width: 40em) {
+  .widget li {
+    font-size: 0.9em;
+  }
+}
+@media screen and (min-width: 60em) {
+  .widget li {
+    font-size: 0.8em;
+  }
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+*[style="width: 150px"],
+.size-thumbnail {
+  width: 40% !important;
+}
+
+.size-medium {
+  width: 50%;
+}
+
+.size-full {
+  width: 100%;
+  float: none;
+}
+
+.breakout,
+.width-fullscreen {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: none;
+  right: 50%;
+  position: relative;
+  width: 100vw;
+}
+
+.alignleft, .aligncenter {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .alignleft, .aligncenter {
+    float: left;
+    padding-right: 1.4em;
+    padding-bottom: 1.4em;
+  }
+}
+
+.alignright {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .alignright {
+    float: right;
+    padding-left: 1.4em;
+    padding-bottom: 1.4em;
+  }
+}
+
+/* */
+hr {
+  margin: 1.8em 0;
+}
+
+.entry__content li {
+  margin-bottom: 0.4em;
+}
+
+.post__categories a {
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+}
+
+.post__date {
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+@media screen and (min-width: 40em) {
+  .post__date {
+    font-size: 0.8em;
+  }
+}
+@media screen and (min-width: 60em) {
+  .post__date {
+    font-size: 0.7em;
+  }
+}
+
+.post__dateContainer {
+  margin-bottom: 0.6em;
+}
+
+.label--date {
+  /*	This hides text visually, without concealing it from screen readers.
+  	https://webaim.org/techniques/css/invisiblecontent/#techniques	*/
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.post-categories {
+  padding: 0;
+}
+.post-categories li {
+  display: inline-block;
+  margin: 0.1em 0;
+}
+
+.search article,
+.archive article {
+  padding: 2em 0;
+}
+.search article p,
+.archive article p {
+  margin-bottom: 0;
+}
+.search .post__title,
+.archive .post__title {
+  margin-bottom: 0.2em;
+}
+.search .page__title,
+.archive .page__title {
+  margin: 0;
+}
+
+.blog .post {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .blog .post {
+    display: grid;
+    grid-gap: 3em;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "post-title post-content" "post-meta post-content";
+  }
+  .blog .post .entry__content {
+    grid-area: post-content;
+  }
+  .blog .post .post__header {
+    grid-area: post-title;
+  }
+  .blog .post .post__meta {
+    grid-area: post-meta;
+  }
+}
+
+div#mc_embed_signup {
+  background: #f1e3df;
+  padding: 1.4em;
+  margin: 4em 0;
+  border: 3px solid #333;
+  box-shadow: 0.4em 0.4em 0 #333;
+  font-family: franklin-gothic-urw, sans-serif;
+}
+div#mc_embed_signup h2 {
+  line-height: 1.1;
+  font-weight: 700;
+}
+.blog div#mc_embed_signup {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .blog div#mc_embed_signup {
+    max-width: 50%;
+  }
+}
+div#mc_embed_signup input#mce-EMAIL {
+  width: 100%;
+  margin: 0.8em 0;
+  border: 2px solid #000;
+}
+div#mc_embed_signup .asterisk,
+div#mc_embed_signup .indicates-required {
+  display: none;
+}
+div#mc_embed_signup input#mc-embedded-subscribe {
+  background: #222;
+  border-radius: 0.4em;
+  color: #f1e3df;
+  font-family: franklin-gothic-urw, sans-serif;
+  font-size: 1.2em;
+  transition: 0.4s opacity ease;
+  font-weight: bold;
+}
+div#mc_embed_signup input#mc-embedded-subscribe:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+div#mc_embed_signup div#mce-success-response {
+  background: #0f0;
+  padding: 0.4em 0.6em;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+figure {
+  margin-bottom: 1em;
+}
+
+figcaption {
+  margin-top: 0.4em;
+}
+
+img {
+  height: auto;
+}
+
+/*
+figure {
+	img {
+		//	This undoes the distortion
+		height: auto;
+	}
+}
+*/
+pre {
+  margin: 1em 0;
+  padding: 1em;
+  white-space: pre-wrap;
+}
+
+.nav-links {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+.nav-links * {
+  margin-bottom: 0.6em;
+}
+.nav-links .prevnext__title {
+  display: block;
+  margin-bottom: 0.2em;
+}
+@media screen and (min-width: 60em) {
+  .nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+  }
+}
+
+form.search-form {
+  border: 1px solid #aaa;
+  border-radius: 0.2em;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.screen-reader-text {
+  display: none;
+}
+
+input.search-field {
+  height: 100%;
+  width: 100%;
+}
+
+input {
+  border-radius: 0;
+  border: none;
+  display: block;
+  padding: 0.8em 1.2em;
+}
+
+label {
+  width: 100%;
+}
+
+/*	Sidebar
+	======= */
+.widget {
+  margin-bottom: 0.8em;
+}
+.widget ul, .widget li {
+  margin: 0;
+  padding: 0;
+}
+.widget li {
+  list-style: none;
+}
+.widget a {
+  display: block;
+  padding: 0.2em 0;
+}
+.widget .widget-title {
+  margin-bottom: 0.2em;
+}
+
+.widget_archive ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.widget_archive li {
+  width: 50%;
+}
+
+/*	Footer
+	======
+
+	On some pages, the sidebar appears in the footer, and needs to
+	have a different layout.
+
+*/
+.blog .widget_categories,
+.blog .widget_archive {
+  grid-column: 1/3;
+}
+.blog .widget_categories ul,
+.blog .widget_archive ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.blog .widget_categories li,
+.blog .widget_archive li {
+  width: 50%;
+}
+.blog .widget_archive {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (max-width: 60em) {
+  .blog .widget_archive ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .blog .widget_archive li {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 60em) {
+  .blog .widget_archive ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .blog .widget_archive li {
+    width: 16.6%;
+  }
+}
+
+.cols-3-lg {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+}
+
+.grid {
+  display: grid;
+}
+
+.blog .u-pageTitle {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.blog .u-lMain {
+  display: block;
+}
+.blog .widget-area {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  .blog .widget-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+  }
+}
+.blog .widget-area section {
+  padding: 1em;
+}
+
+html {
+  padding: 2em 8vw;
+}
+
+.u-lHeader,
+.u-NavSite {
+  margin-bottom: 2em;
+  padding-bottom: 2.3em;
+}
+
+.site-title {
+  margin-bottom: 0;
+}
+
+.menu-toggle,
+.menu-close {
+  display: none;
+}
+
+.menu-main-navigation-container li {
+  margin-right: -0.3em !important;
+}
+.menu-main-navigation-container a {
+  display: inline-block;
+  padding: 0.4em 0.6em;
+}
+
+html {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+html .PageContentInner {
+  display: grid;
+  grid-template-areas: "masthead" "nav-top" "content" "footer";
+}
+html .PageContentInner > * {
+  min-width: 0;
+}
+@media screen and (min-width: 60em) {
+  html.has-subnav .PageContentInner {
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "masthead nav-top" "nav-secondary content" "footer footer";
+  }
+  html.no-subnav .PageContentInner {
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "masthead nav-top" "content content" "footer footer";
+  }
+  html.has-sidebar:not(.blog) .u-lMain {
+    grid-template-columns: 7fr 3fr;
+    grid-gap: 6em;
+  }
+}
+html .u-lHeader {
+  align-items: center;
+  display: flex;
+  grid-area: masthead;
+  justify-content: center;
+  justify-content: left;
+  padding: 0;
+}
+html .u-NavSite__main {
+  grid-area: nav-top;
+  line-height: 1.4;
+}
+html .u-NavSite__level--1 {
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  html .u-NavSite__level--1 {
+    float: right;
+    width: 70%;
+  }
+}
+html .menu-main-navigation-container .menu {
+  margin: 0;
+  padding-left: 0;
+  text-align: center;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  html .menu-main-navigation-container .menu {
+    text-align: right;
+  }
+}
+html .menu-main-navigation-container > ul > li {
+  display: inline-block;
+  list-style: none;
+}
+html .u-NavSite__secondary {
+  grid-area: nav-secondary;
+}
+html .u-NavSite__secondary .u-NavSite__level--2 {
+  margin: 5em 4em 0 0;
+  padding: 0;
+}
+html .u-NavSite__secondary li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+html .u-NavSite__secondary li a {
+  text-decoration: none;
+  padding-left: 1.4em;
+}
+html .u-lMain {
+  grid-area: content;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  html .u-lMain {
+    display: grid;
+  }
+}
+html .u-lFooter {
+  grid-area: footer;
+}
+
+/*	This file doesn't do anything except bind variables to specific elements on the 
+	page. The actual colors are set in the palette files.
+*/
+::-moz-selection {
+  background: yellow;
+}
+
+::selection {
+  background: yellow;
+}
+
+hr {
+  border-top: 2px solid #d9e6ec;
+}
+
+pre {
+  background: #ff0;
+}
+
+.page__title {
+  color: #775454;
+  color: #775454;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+.site-title a:link {
+  color: #775454;
+  background: transparent;
+}
+.site-title a:visited {
+  color: #775454;
+  background: transparent;
+}
+.site-title a:hover, .site-title a:visited:hover, .site-title a:focus {
+  color: #ff0;
+  background: transparent;
+}
+.site-title a:active, .site-title a:visited:active {
+  color: #ff0;
+  background: transparent;
+}
+
+.site-description {
+  color: #c28774;
+}
+
+html {
+  color: #454545;
+  /*	Sets up a media query. This expects that all of a project's breakpoints will
+  	    be stored in a map named $breakpoints, as follows:
+
+  $breakpoints: (
+  	"small": 30em,
+  	"medium": 50em,
+  	"large": 70em
+  );	
+  	*/
+}
+@media screen and (min-width: 60em) {
+  html {
+    border: 1em solid #d9e6ec;
+  }
+}
+
+.u-lHeader,
+.u-NavSite {
+  border-bottom: 0.16rem solid #a96682;
+}
+
+.post {
+  border-bottom: 3px solid #d9e6ec;
+}
+
+a {
+  transition: 0.2s color ease;
+  transition-property: color, background;
+}
+a:link {
+  color: #f46e42;
+  background: transparent;
+}
+a:visited {
+  color: #888;
+  background: transparent;
+}
+a:hover, a:visited:hover, a:focus {
+  color: #2f241f;
+  background: #ff0;
+}
+a:active, a:visited:active {
+  color: #2f241f;
+  background: #ff0;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/*	Nav
+	=== */
+.menu-main-navigation-container a {
+  text-decoration: none;
+}
+.menu-main-navigation-container a:link {
+  color: #2f241f;
+  background: transparent;
+}
+.menu-main-navigation-container a:visited {
+  color: #2f241f;
+  background: transparent;
+}
+.menu-main-navigation-container a:hover, .menu-main-navigation-container a:visited:hover, .menu-main-navigation-container a:focus {
+  color: #2f241f;
+  background: #ff0;
+}
+.menu-main-navigation-container a:active, .menu-main-navigation-container a:visited:active {
+  color: #2f241f;
+  background: #ff0;
+}
+.menu-main-navigation-container .current-menu-item a {
+  background: #ff0;
+}
+
+/*	Widgets
+	======= */
+.widget-area a:link {
+  color: #2f241f;
+  background: transparent;
+}
+.widget-area a:visited {
+  color: #888;
+  background: transparent;
+}
+.widget-area a:hover, .widget-area a:visited:hover, .widget-area a:focus {
+  color: #2f241f;
+  background: #ddeaea;
+}
+.widget-area a:active, .widget-area a:visited:active {
+  color: #2f241f;
+  background: #ddeaea;
+}
+.blog .widget-area section {
+  background: #eef4f5;
+}
+
+figcaption {
+  color: #666;
+}
+
+.menu-item {
+  background: #fff;
+  margin-left: -1px;
+}
+
+html {
+  position: relative;
+}
+
+html:before {
+  background-image: url(../images/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: bottom;
+  content: "";
+  top: 0;
+  right: 2em;
+  width: 32vw;
+  height: 18vw;
+  max-height: 16em;
+  z-index: -1;
+}
+
+.entry__content {
+  background: #fff;
+}
+
+.post__titleLink {
+  text-decoration: none;
+}
+.post__titleLink:link {
+  color: #2f241f;
+  background: transparent;
+}
+.post__titleLink:visited {
+  color: #2f241f;
+  background: transparent;
+}
+.post__titleLink:hover, .post__titleLink:visited:hover, .post__titleLink:focus {
+  color: #f46e42;
+  background: transparent;
+}
+.post__titleLink:active, .post__titleLink:visited:active {
+  color: #f46e42;
+  background: transparent;
+}
+
+.post__categories a:link {
+  color: #000;
+  background: #ff0;
+}
+.post__categories a:visited {
+  color: #000;
+  background: #ff0;
+}
+.post__categories a:hover, .post__categories a:visited:hover, .post__categories a:focus {
+  color: #ff0;
+  background: #000;
+}
+.post__categories a:active, .post__categories a:visited:active {
+  color: #ff0;
+  background: #000;
+}
+
+.post-edit-link {
+  text-decoration: none;
+  padding: 0.1em 0.2em;
+}
+.post-edit-link:link {
+  color: #f00;
+  background: transparent;
+}
+.post-edit-link:visited {
+  color: #f00;
+  background: transparent;
+}
+.post-edit-link:hover, .post-edit-link:visited:hover, .post-edit-link:focus {
+  color: #000;
+  background: transparent;
+}
+.post-edit-link:active, .post-edit-link:visited:active {
+  color: #000;
+  background: transparent;
+}
+
+.post__date {
+  color: #775454;
+}
+
+.home {
+  padding-top: 4em;
+  position: relative;
+}
+.home .site-description {
+  padding-bottom: 1em;
+}
+.home .menu-item {
+  background: #fff;
+  margin-left: -1px;
+}
+.home:before {
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: bottom;
+  content: "";
+  top: 0;
+  right: 1em;
+  width: 52vw;
+  height: 28vw;
+  max-height: 16em;
+  z-index: -1;
+}
+
+.widget a {
+  border-top: 1px solid #d9e6ec;
+  text-decoration: none;
+}
+
+#wpadminbar {
+  opacity: 0;
+}
+#wpadminbar:hover {
+  opacity: 1;
+}

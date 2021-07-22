@@ -1,0 +1,23 @@
+.site-title {
+	font-family: $serif;
+	font-size: 2.2em;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-weight: 100;
+}
+.site-description {
+	font-family: $serif;
+	font-size: 1em;
+	text-transform: uppercase;	
+	letter-spacing: 0.2em;
+	font-weight: 100;
+}
+
+
+.home .site-title {
+	font-size: 3.2em;
+	    
+	@include break(medium) {	
+	    font-size: 4.2em;
+    }
+}

@@ -1,0 +1,15 @@
+.nav-links {
+	* {
+		margin-bottom: 0.6em;
+	}
+	.prevnext__title {
+		display: block;
+		margin-bottom: 0.2em;
+	}
+
+	@include break(medium) {
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    grid-gap: 2em;
+	}
+}

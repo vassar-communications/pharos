@@ -1,0 +1,37 @@
+h1 {
+	@include font(sansSerif, xlarge heavy);
+}
+h2 {
+	@include font(sansSerif, heavy large condensed);
+}
+h3 {
+	@include font(serif, wght-normal size-medium);
+}
+h4 {
+	@include font(sansSerif, heavy regular condensed);
+}
+
+p {
+	@include font(sansSerif, regular);
+}
+figcaption {
+	@include font(sansSerif, xsmall);
+}
+li {
+	@include font(sansSerif, regular condensed);
+	
+	&::marker {
+		font-weight: bold;
+	}
+}
+pre {
+	@include font(serif, size-medium condensed);
+}
+p, li {
+	em {
+		font-family: $serif;
+	}
+}
+.has-intro-font-size {
+	@include font(sansSerif, size-medium weight-light condensed);
+}

@@ -1,0 +1,18 @@
+.post__date {
+	@include font(sansSerif, xxsmall);
+}
+.post__dateContainer {
+    margin-bottom: 0.6em;
+}
+
+.label--date {
+	@include hide-visually();
+}
+.post-categories {
+	padding: 0;
+	
+	li {
+		display: inline-block;
+		margin: 0.1em 0;
+    }
+}

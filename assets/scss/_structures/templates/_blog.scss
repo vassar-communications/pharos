@@ -1,0 +1,19 @@
+.blog {
+	.u-pageTitle {
+		@include hideVisually();
+	}
+	.u-lMain {
+		display: block;
+	}
+	.widget-area {
+		@include break(medium) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;	
+			grid-column-gap: 1em;
+		}
+		
+		section {
+			padding: 1em;
+		}
+	}
+}

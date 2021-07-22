@@ -1,0 +1,30 @@
+.home {
+    padding-top: 4em;
+	position: relative;
+	
+	.site-description {
+		padding-bottom: 1em;
+	}
+	
+	.menu-item {
+		background: #fff;
+		margin-left: -1px;
+	}
+	
+//	@include break(small) {
+		&:before {
+			background-image: url("../images/banner.jpg");
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    position: absolute;
+		    background-position: bottom;
+		    content: '';
+		    top: 0;
+		    right: 1em;
+		    width: 52vw;
+		    height: 28vw;
+		    max-height: 16em;
+		    z-index: -1;
+		}
+//	}
+}

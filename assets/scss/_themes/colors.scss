@@ -1,0 +1,125 @@
+/*	This file doesn't do anything except bind variables to specific elements on the 
+	page. The actual colors are set in the palette files.
+*/
+
+::-moz-selection { background: yellow; }
+::selection { background: yellow; }
+
+hr {
+	border-top: 2px solid $blue-xlight;
+}
+pre {
+	background: $yellow;	
+}
+
+.page__title {
+	color: #775454;
+	color: $brown-light;
+}
+
+
+.site-title {
+	a {
+		text-decoration: none;
+		@include linkColors($brown-light, $brown-light, $yellow, $yellow);
+	}
+}
+.site-description {
+	color: $brown-xlight;
+}
+
+html {
+	color: #454545;
+	
+	@include break(medium) {
+		border: 1em solid $blue-xlight;
+	}
+}
+.u-lHeader,
+.u-NavSite {
+    border-bottom: 0.16rem solid $burgundy;
+}
+.post {
+	border-bottom: 3px solid $blue-xlight;
+}
+
+a {
+	@include transition-04s();
+	@include linkColors($orange, #888, $brown, $brown, transparent, $yellow);
+}
+
+input {
+	-webkit-appearance: none;
+	appearance: none;	
+}
+
+
+/*	Nav
+	=== */
+
+.menu-main-navigation-container {
+	a {
+		@include linkColors($brown, $brown, $brown, $brown, transparent, $yellow);
+		text-decoration: none;
+	}
+	.current-menu-item {
+		a {
+			background: $yellow;
+		}
+	}
+}
+
+
+
+/*	Widgets
+	======= */
+
+.widget-area {
+	a {
+		@include linkColors($brown, #888, $brown, $brown, transparent, #ddeaea);
+	}
+	.blog & {
+		section {
+			background: #eef4f5;
+		}
+	}
+}
+
+
+figcaption {
+	color: #666;
+}
+
+
+
+
+
+
+.menu-item {
+	background: #fff;
+	margin-left: -1px;
+}
+
+
+html {
+    position: relative;
+}
+html:before {
+    background-image: url(../images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: bottom;
+    content: "";
+    top: 0;
+	right: 2em;
+	width: 32vw;
+	height: 18vw;
+    max-height: 16em;
+    z-index: -1;
+}
+
+//	This is so the papyrus image doesn't show up under the post text, as is happening on any page without a right side column, like Articles
+.entry__content {
+    background: #fff;
+}

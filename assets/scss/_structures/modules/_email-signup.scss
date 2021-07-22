@@ -1,0 +1,52 @@
+div#mc_embed_signup {
+    background: #f1e3df;
+    padding: 1.4em;
+    margin: 4em 0;
+    border: 3px solid #333;
+    box-shadow: 0.4em 0.4em 0 #333;
+	font-family: $sansSerif;
+
+
+	h2 {
+		line-height: 1.1;
+		font-weight: 700;
+	}
+	.blog & {
+		@include break(medium) {
+		    max-width: 50%;
+		}		
+	}
+	
+	input#mce-EMAIL {
+	    width: 100%;
+	    margin: 0.8em 0;
+	    border: 2px solid #000;
+	}
+	
+	.asterisk,
+	.indicates-required {
+		display: none;
+	}
+
+
+	input#mc-embedded-subscribe {
+	    background: #222;
+	    border-radius: 0.4em;
+	    color: #f1e3df;
+		font-family: $sansSerif;
+	    font-size: 1.2em;
+		transition: 0.4s opacity ease;
+	    font-weight: bold;
+	    
+	    &:hover {
+		    cursor: pointer;
+			opacity: 0.6;
+	    }
+	}
+	div#mce-success-response {
+	    background: #0f0;
+	    padding: 0.4em 0.6em;
+	    margin-bottom: 1em;
+	    font-weight: bold;
+	}
+}

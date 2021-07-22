@@ -1,0 +1,14 @@
+.alignleft, .aligncenter {
+	@include break(medium) {
+		float: left;
+		padding-right: 1.4em;
+		padding-bottom: 1.4em;
+	}
+}
+.alignright {
+	@include break(medium) {
+		float: right;
+		padding-left: 1.4em;
+		padding-bottom: 1.4em;
+	}
+}

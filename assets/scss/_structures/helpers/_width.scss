@@ -1,0 +1,28 @@
+//	yes, this sucks. Problem is that the alignment class is applied to
+//	the containing figure tag, but the width class is applied to the
+//	contained image.
+
+*[style="width: 150px"],
+.size-thumbnail {
+    width: 40% !important;
+}
+
+.size-medium {
+	width: 50%;
+}
+
+.size-full {
+	width: 100%;
+	float: none;
+}
+
+.breakout,
+.width-fullscreen {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: none;
+	right: 50%;
+	position: relative;
+	width: 100vw;
+}

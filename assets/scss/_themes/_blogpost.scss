@@ -1,0 +1,17 @@
+.post__titleLink {
+	@include linkColors($brown, $brown, $orange, $orange);
+	text-decoration: none;
+}
+.post__categories {
+	a {
+		@include linkColors(#000, #000, $yellow, $yellow, $yellow, #000);
+	}
+}
+.post-edit-link {
+	@include linkColors(#f00, #f00, #000, #000);
+	text-decoration: none;
+	padding: 0.1em 0.2em;
+}
+.post__date {
+	color: $brown-light;
+}

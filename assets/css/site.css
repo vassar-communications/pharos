@@ -1076,11 +1076,11 @@ a {
   transition-property: color, background;
 }
 a:link {
-  color: #f46e42;
+  color: #d83a07;
   background: transparent;
 }
 a:visited {
-  color: #888;
+  color: #666;
   background: transparent;
 }
 a:hover, a:visited:hover, a:focus {
@@ -1090,6 +1090,9 @@ a:hover, a:visited:hover, a:focus {
 a:active, a:visited:active {
   color: #2f241f;
   background: #ff0;
+}
+a:hover {
+  text-decoration: none;
 }
 
 input {
@@ -1129,7 +1132,7 @@ input {
   background: transparent;
 }
 .widget-area a:visited {
-  color: #888;
+  color: #666;
   background: transparent;
 }
 .widget-area a:hover, .widget-area a:visited:hover, .widget-area a:focus {
@@ -1139,6 +1142,9 @@ input {
 .widget-area a:active, .widget-area a:visited:active {
   color: #2f241f;
   background: #ddeaea;
+}
+.widget-area a:hover {
+  text-decoration: underline;
 }
 .blog .widget-area section {
   background: #eef4f5;
@@ -1188,11 +1194,11 @@ html:before {
   background: transparent;
 }
 .post__titleLink:hover, .post__titleLink:visited:hover, .post__titleLink:focus {
-  color: #f46e42;
+  color: #d83a07;
   background: transparent;
 }
 .post__titleLink:active, .post__titleLink:visited:active {
-  color: #f46e42;
+  color: #d83a07;
   background: transparent;
 }
 

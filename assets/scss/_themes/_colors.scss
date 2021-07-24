@@ -45,7 +45,11 @@ html {
 
 a {
 	@include transition-04s();
-	@include linkColors($orange, #888, $brown, $brown, transparent, $yellow);
+	@include linkColors($orange, $gray, $brown, $brown, transparent, $yellow);
+	
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 input {
@@ -76,7 +80,11 @@ input {
 
 .widget-area {
 	a {
-		@include linkColors($brown, #888, $brown, $brown, transparent, #ddeaea);
+		@include linkColors($brown, $gray, $brown, $brown, transparent, #ddeaea);
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	.blog & {
 		section {
